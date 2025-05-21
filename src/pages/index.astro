@@ -1,0 +1,146 @@
+---
+// index.astro
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import About from "../components/About.astro";
+---
+
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/web.png" />
+  <title>CyberNova</title>
+</head>
+
+
+<Layout>
+<Header>
+    <header class="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-pink-300 via-orange-200 to-blue-200 animate-fade-in">
+      <div class="flex justify-between items-center p-6">
+        <h1 class="text-3xl font-bold text-purple-700">CyberNova</h1>
+        <nav class="space-x-6">
+          <a href="#" class="text-gray-700 hover:text-purple-700">Inicio</a>
+          <a href="#servicios" class="text-gray-700 hover:text-purple-700">Servicios</a>
+          <a href="#nosotros" class="text-gray-700 hover:text-purple-700">Sobre Nosotros</a>
+          <a href="#contacto" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Contacto</a>
+        </nav>
+      </div>
+    </header>
+  </Header>
+
+  <Hero>
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-300 via-orange-200 to-blue-200 px-6 py-32 text-center text-gray-900">
+      <div class="space-y-6 max-w-2xl">
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight animate-fade-in">
+          Bienvenido a <span class="text-pink-600">CyberNova</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 animate-slide-up delay-100">
+          Protegemos tu mundo digital con soluciones de vanguardia.
+        </p>
+        <a href="#servicios" class="inline-block px-6 py-3 text-white font-bold rounded-lg shadow-lg bg-pink-500 hover:bg-pink-600 hover:scale-105 transition duration-300 animate-bounce-in delay-200">
+          Ver servicios
+        </a>
+      </div>
+    </section>
+  </Hero>
+
+  <Services>
+    <section id="servicios" class="px-6 py-20 bg-white animate-fade-in">
+      <h2 class="text-4xl font-extrabold text-center text-gray-900 mb-12">Nuestros Servicios</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="bg-gradient-to-tr from-pink-400 to-orange-300 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 animate-slide-up">
+          <h3 class="text-white text-2xl font-bold mb-2">Evaluación de Riesgos</h3>
+          <p class="text-white">Identificamos vulnerabilidades críticas en tus sistemas.</p>
+        </div>
+        <div class="bg-gradient-to-tr from-purple-400 to-pink-500 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 animate-slide-up delay-100">
+          <h3 class="text-white text-2xl font-bold mb-2">Pruebas de Penetración</h3>
+          <p class="text-white">Simulamos ataques reales para fortalecer tu defensa.</p>
+        </div>
+        <div class="bg-gradient-to-tr from-blue-400 to-violet-400 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 animate-slide-up delay-200">
+          <h3 class="text-white text-2xl font-bold mb-2">Cumplimiento y Seguridad</h3>
+          <p class="text-white">Te ayudamos a cumplir normas como GDPR e ISO 27001.</p>
+        </div>
+      </div>
+    </section>
+  </Services>
+
+  <About>
+    <section id="nosotros" class="px-6 py-20 bg-cyan-100 text-center animate-fade-in">
+      <h3 class="text-3xl font-extrabold mb-6">Sobre Nosotros</h3>
+      <p class="max-w-3xl mx-auto text-gray-700 text-base leading-relaxed">
+        Somos un equipo apasionado por la seguridad digital. Nuestro objetivo es ayudarte a proteger tus activos y garantizar la continuidad de tu negocio en el mundo online.
+      </p>
+      <img
+        src="/images/team-avatar.png"
+        alt="Equipo"
+        class="w-40 mx-auto mt-6 rounded-full shadow-lg"
+      />
+    </section>
+  </About>
+
+  <section id="testimonios" class="px-6 py-20 bg-white text-center animate-fade-in">
+    <h2 class="text-3xl font-bold mb-8">¿Qué opinan nuestros clientes?</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-gray-100 rounded-xl shadow animate-fade-in">
+        <p>"Nos ayudaron a pasar una auditoría ISO sin problemas."</p>
+        <strong class="block mt-4 text-purple-700">— Empresa X</strong>
+      </div>
+      <div class="p-6 bg-gray-100 rounded-xl shadow animate-fade-in delay-100">
+        <p>"Excelente equipo y resultados inmediatos."</p>
+        <strong class="block mt-4 text-purple-700">— Cliente Y</strong>
+      </div>
+      <div class="p-6 bg-gray-100 rounded-xl shadow animate-fade-in delay-200">
+        <p>"Nuestra seguridad mejoró un 200% gracias a su análisis de riesgos."</p>
+        <strong class="block mt-4 text-purple-700">— Empresa Z</strong>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto" class="px-8 py-10 bg-gray-900 text-white text-center animate-fade-in">
+    <h4 class="text-2xl font-bold mb-4">¿Listo para comenzar?</h4>
+    <p class="mb-6">Contáctanos y te ayudamos a asegurar tu negocio digital.</p>
+    <form class="space-y-4 max-w-md mx-auto" action="https://formspree.io/f/yourformid" method="POST">
+      <input type="text" name="name" placeholder="Nombre" required class="w-full p-2 rounded bg-gray-800 text-white placeholder-gray-400" />
+      <input type="email" name="email" placeholder="Correo electrónico" required class="w-full p-2 rounded bg-gray-800 text-white placeholder-gray-400" />
+      <textarea name="message" placeholder="Mensaje" required class="w-full p-2 rounded bg-gray-800 text-white placeholder-gray-400"></textarea>
+      <button type="submit" class="bg-green-500 px-6 py-3 rounded hover:bg-green-600">Enviar mensaje</button>
+    </form>
+    <p class="mt-8 text-sm text-gray-400">© 2025 CyberNova. Todos los derechos reservados.</p>
+  </footer>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce-in {
+      0% { transform: scale(0.9); opacity: 0; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-out forwards;
+    }
+    .animate-slide-up {
+      animation: slide-up 1s ease-out forwards;
+    }
+    .animate-bounce-in {
+      animation: bounce-in 0.8s ease-out forwards;
+    }
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+  </style>
+</Layout>
